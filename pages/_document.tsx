@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
@@ -10,7 +11,8 @@ export default function Document() {
           <link rel="icon" href="/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </Head>
-      <body>  
+      <body> 
+        <Navbar />
         <Main />
         <NextScript />
       </body>
