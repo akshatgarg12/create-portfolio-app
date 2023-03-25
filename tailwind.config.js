@@ -6,7 +6,13 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        '30': '30px',
+        '60': '60px',
+        '100': '100px',
+      }
+    }
   },
   plugins: [require("tw-elements/dist/plugin")],
 }
