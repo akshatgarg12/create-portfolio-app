@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild" : "npm run tailwind:prod",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tailwind":"tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css --watch"
+    "tailwind:dev":"tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css --watch",
+    "tailwind:prod":"tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css"
   },
   "dependencies": {
     "@types/node": "18.15.7",
