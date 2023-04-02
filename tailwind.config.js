@@ -6,7 +6,15 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-    extend: {
+    colors:{
+      background : 'var(--background-color)',
+      altBackground : 'var(--alt-background-color)',
+      text : 'var(--text-color)',
+      primary : 'var(--primary-color)',
+      secondary : 'var(--secondary-color)',
+      tertiary : 'var(--/tertiary-color)',
+    },
+    extend: { 
       padding: {
         '30': '30px',
         '60': '60px',
@@ -14,5 +22,6 @@ module.exports = {
       }
     }
   },
+  safelist: [],
   plugins: [require("tw-elements/dist/plugin")],
 }

@@ -15,6 +15,18 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Personal portfolio of akshat garg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+          {
+            `
+            @layer base {
+              :root {
+                  --background-color: red;
+                  --alt-background-color: blue;
+                }
+              }
+            `
+          }
+        </style>
       </Head>
       <Layout pathname={pathname}>
         <Component {...pageProps} />

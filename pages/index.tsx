@@ -14,7 +14,7 @@ const Home = () => {
            />
            <h3 className='mt-7 text-xl'>Hey 👋🏼, I&apos;m Akshat Garg<br/> Frontend Web Developer</h3>
       </section>
-      <section className="py-30 flex flex-col items-center bg-slate-400">
+      <section className="py-30 flex flex-col items-center bg-background">
         <div className='w-9/12 m-auto'>
            <h2 className='mb-4 text-xl font-bold'>{`<About />`}</h2>
            <p className='text-lg'>
