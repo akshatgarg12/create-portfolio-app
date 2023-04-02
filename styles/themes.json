@@ -6,13 +6,29 @@
             "background-color" : "#000000",
             "alt-background-color" : "#0c1821",
             "text-color" : "#EDF7F6",
-            "alt-text-color" : "#F19953",
+            "alt-text-color" : "#faedcd",
             "link-color" : "#FDF0D5",
             "alt-link-color" : "#FDF0D5",
             "border-color" : "#F0544F",
             "alt-border-color" : "#F0544F",
             "button-color" : "#D81E5B",
             "alt-button-color" : "#D81E5B"
+        }  
+    },
+    {
+        "id" : "light",
+        "name" : "Light",
+        "colors" : {
+            "background-color" : "#d8e2dc",
+            "alt-background-color" : "#d8e2dc",
+            "text-color" : "#023047",
+            "alt-text-color" : "#f5ebe0",
+            "link-color" : "#ffafcc",
+            "alt-link-color" : "#ffb703",
+            "border-color" : "#ff006e",
+            "alt-border-color" : "#ff006e",
+            "button-color" : "#f4acb7",
+            "alt-button-color" : "#f4acb7"
         }  
     }
 ]
