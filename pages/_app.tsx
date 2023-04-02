@@ -6,10 +6,12 @@ import Script from 'next/script'
 import themes from '@/styles/themes.json'
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
+import { useContext } from 'react'
+import ThemeContext from '@/context/theme'
 
 export default function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname()
-  const chosenTheme = 'dark'
+  const {theme : chosenTheme} = useContext(ThemeContext)
   return (
     <>
       <Head>
