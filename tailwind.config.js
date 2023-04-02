@@ -6,7 +6,19 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-    extend: {
+    extend: { 
+      colors:{
+        background : 'var(--background-color)',
+        altBackground : 'var(--alt-background-color)',
+        text : 'var(--text-color)',
+        altText : 'var(--alt-text-color)',
+        link : 'var(--link-color)',
+        altLink : 'var(--link-color)',
+        border : 'var(--border-color)',
+        altBorder : 'var(--alt-border-color)',
+        button : 'var(--button-color)',
+        altButton : 'var(--alt-button-color)',
+      },
       padding: {
         '30': '30px',
         '60': '60px',
@@ -14,5 +26,6 @@ module.exports = {
       }
     }
   },
+  safelist: [],
   plugins: [require("tw-elements/dist/plugin")],
 }

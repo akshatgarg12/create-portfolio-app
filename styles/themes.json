@@ -1,0 +1,18 @@
+[
+    {
+        "id" : "dark",
+        "name" : "Dark",
+        "colors" : {
+            "background-color" : "#000000",
+            "alt-background-color" : "#0c1821",
+            "text-color" : "#EDF7F6",
+            "alt-text-color" : "#F19953",
+            "link-color" : "#FDF0D5",
+            "alt-link-color" : "#FDF0D5",
+            "border-color" : "#F0544F",
+            "alt-border-color" : "#F0544F",
+            "button-color" : "#D81E5B",
+            "alt-button-color" : "#D81E5B"
+        }  
+    }
+]

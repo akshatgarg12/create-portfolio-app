@@ -3,11 +3,13 @@ import '@/styles/globals.css'
 import '@/styles/tailwind.css'
 import Head from 'next/head'
 import Script from 'next/script'
+import themes from '@/styles/themes.json'
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
 
 export default function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname()
+  const chosenTheme = 'dark'
   return (
     <>
       <Head>
@@ -15,6 +17,26 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Personal portfolio of akshat garg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+          {
+            `
+            @layer base {
+              :root {
+                ${
+                  themes.map((theme) => {
+                    if(theme.id === chosenTheme){
+                      return Object.keys(theme.colors).map((color:string) => {
+                        // @ts-ignore
+                        return `--${color} : ${theme.colors[color]};`
+                      }).join('\n')
+                    }
+                  })
+                 }
+                }
+              }
+            `
+          }
+        </style>
       </Head>
       <Layout pathname={pathname}>
         <Component {...pageProps} />

@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <div className="block max-w-sm rounded-lg bg-white p-6 m-auto">
+        <div className="block max-w-sm rounded-lg text-altText p-6 m-auto">
         <form>
           <div className="relative mb-6" data-te-input-wrapper-init>
             <input
@@ -24,7 +24,7 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+            className="w-full rounded bg-button px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-button-700 hover:shadow-lg focus:bg-button-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-800 active:shadow-lg"
             data-te-ripple-init
             data-te-ripple-color="light">
             Subscribe
