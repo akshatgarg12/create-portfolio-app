@@ -6,12 +6,13 @@ import Script from 'next/script'
 import themes from '@/styles/themes.json'
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
-import { useContext } from 'react'
+import { useState } from 'react'
 import ThemeContext from '@/context/theme'
 
 export default function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname()
-  const {theme : chosenTheme} = useContext(ThemeContext)
+  const [theme, setTheme] = useState('dark');
+
   return (
     <>
       <Head>
@@ -25,11 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
             @layer base {
               :root {
                 ${
-                  themes.map((theme) => {
-                    if(theme.id === chosenTheme){
-                      return Object.keys(theme.colors).map((color:string) => {
+                  themes.map((themeItem) => {
+                    if(themeItem.id === theme){
+                      return Object.keys(themeItem.colors).map((color:string) => {
                         // @ts-ignore
-                        return `--${color} : ${theme.colors[color]};`
+                        return `--${color} : ${themeItem.colors[color]};`
                       }).join('\n')
                     }
                   })
@@ -40,9 +41,13 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         </style>
       </Head>
-      <Layout pathname={pathname}>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeContext.Provider value={{
+          theme, setTheme
+        }}>
+        <Layout pathname={pathname}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeContext.Provider>
       <Script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></Script>
     </>
   )

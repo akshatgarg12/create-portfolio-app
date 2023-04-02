@@ -26,6 +26,5 @@ module.exports = {
       }
     }
   },
-  safelist: [],
   plugins: [require("tw-elements/dist/plugin")],
 }
