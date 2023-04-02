@@ -26,11 +26,11 @@ const Navbar = ({pathname}:NavbarProps) => {
     ]
     return (
       <nav
-      className="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-3 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start"
+      className="relative flex w-full flex-wrap items-center justify-between bg-background py-3 text-text shadow-lg lg:flex-wrap lg:justify-start "
       data-te-navbar-ref>
       <div className="flex w-full flex-wrap items-center justify-between px-6">
         <button
-          className="block border-0 bg-transparent py-2 px-2.5 text-neutral-200 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+          className="block border-0 bg-transparent py-2 px-2.5 text-text hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
           type="button"
           data-te-collapse-init
           data-te-target="#navbarSupportedContent4"
@@ -63,7 +63,7 @@ const Navbar = ({pathname}:NavbarProps) => {
                   return (
                       <li key={idx} className="p-2" data-te-nav-item-ref>
                         <Link
-                          className={`text-white ${pathname !== link.href && 'opacity-60'} hover:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400`}
+                          className={`text-link ${pathname !== link.href && 'opacity-60'} hover:opacity-80 lg:px-2`}
                           href={link.href}
                           data-te-nav-link-ref
                           >{link.label}

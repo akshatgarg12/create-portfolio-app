@@ -4,7 +4,7 @@ import Contact from '@/components/Contact'
 const Home = () => {
   return (
     <>
-      <section className="p-60 flex flex-col items-center">
+      <section className="p-60 flex flex-col items-center bg-altBackground text-text">
            <Image
               className='rounded-md'
               height={208}
@@ -14,7 +14,7 @@ const Home = () => {
            />
            <h3 className='mt-7 text-xl'>Hey 👋🏼, I&apos;m Akshat Garg<br/> Frontend Web Developer</h3>
       </section>
-      <section className="py-30 flex flex-col items-center bg-background">
+      <section className="py-30 flex flex-col items-center bg-background text-text">
         <div className='w-9/12 m-auto'>
            <h2 className='mb-4 text-xl font-bold'>{`<About />`}</h2>
            <p className='text-lg'>
@@ -25,7 +25,7 @@ const Home = () => {
            </p>
         </div>
       </section>
-      <section className="py-30 flex flex-col items-center">
+      <section className="py-30 flex flex-col items-center bg-altBackground text-text">
         <div className='w-9/12 m-auto'>
           <h2 className='mb-4 text-xl font-bold'>{`<Contact />`}</h2>
           <Contact />

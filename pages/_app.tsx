@@ -3,11 +3,13 @@ import '@/styles/globals.css'
 import '@/styles/tailwind.css'
 import Head from 'next/head'
 import Script from 'next/script'
+import themes from '@/styles/themes.json'
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
 
 export default function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname()
+  const chosenTheme = 'dark'
   return (
     <>
       <Head>
@@ -20,8 +22,16 @@ export default function App({ Component, pageProps }: AppProps) {
             `
             @layer base {
               :root {
-                  --background-color: red;
-                  --alt-background-color: blue;
+                ${
+                  themes.map((theme) => {
+                    if(theme.id === chosenTheme){
+                      return Object.keys(theme.colors).map((color:string) => {
+                        // @ts-ignore
+                        return `--${color} : ${theme.colors[color]};`
+                      }).join('\n')
+                    }
+                  })
+                 }
                 }
               }
             `
