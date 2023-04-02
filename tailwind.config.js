@@ -13,7 +13,7 @@ module.exports = {
         text : 'var(--text-color)',
         altText : 'var(--alt-text-color)',
         link : 'var(--link-color)',
-        altLink : 'var(--link-color)',
+        altLink : 'var(--alt-link-color)',
         border : 'var(--border-color)',
         altBorder : 'var(--alt-border-color)',
         button : 'var(--button-color)',

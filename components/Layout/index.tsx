@@ -1,4 +1,5 @@
 import Navbar from "../Navbar";
+import ThemeBar from "../ThemeBar";
 
 interface LayoutProps{
     pathname : string
@@ -9,6 +10,7 @@ const Layout = ({pathname, children} : LayoutProps) => {
     return (
         <>
             <Navbar pathname = {pathname}/>
+            <ThemeBar />
             <main>{children}</main>
         </>
     );
