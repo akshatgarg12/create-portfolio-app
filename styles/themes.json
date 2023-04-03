@@ -16,19 +16,67 @@
         }  
     },
     {
-        "id" : "light",
-        "name" : "Light",
+        "id" : "minimalist",
+        "name" : "Minimalist",
         "colors" : {
-            "background-color" : "#d8e2dc",
-            "alt-background-color" : "#d8e2dc",
-            "text-color" : "#023047",
-            "alt-text-color" : "#f5ebe0",
-            "link-color" : "#ffafcc",
-            "alt-link-color" : "#ffb703",
-            "border-color" : "#ff006e",
-            "alt-border-color" : "#ff006e",
-            "button-color" : "#f4acb7",
-            "alt-button-color" : "#f4acb7"
-        }  
+            "background-color" : "#FFFFFF",
+            "alt-background-color" : "#F5F5F5",
+            "text-color" : "#4A4A4A",
+            "alt-text-color" : "#7F7F7F",
+            "link-color" : "#2F80ED",
+            "alt-link-color" : "#2F80ED",
+            "border-color" : "#D9D9D9",
+            "alt-border-color" : "#D9D9D9",
+            "button-color" : "#4A90E2",
+            "alt-button-color" : "#4A90E2"
+        }
+    },
+    {
+        "id" : "nature",
+        "name" : "Nature",
+        "colors" : {
+            "background-color" : "#98FB98",
+            "alt-background-color" : "#F0FFF0",
+            "text-color" : "#4A4A4A",
+            "alt-text-color" : "#7F7F7F",
+            "link-color" : "#228B22",
+            "alt-link-color" : "#228B22",
+            "border-color" : "#32CD32",
+            "alt-border-color" : "#32CD32",
+            "button-color" : "#006400",
+            "alt-button-color" : "#006400"
+        }
+    },
+    {
+        "id" : "vintage",
+        "name" : "Vintage",
+        "colors" : {
+            "background-color" : "#F5DEB3",
+            "alt-background-color" : "#FFDAB9",
+            "text-color" : "#4A4A4A",
+            "alt-text-color" : "#7F7F7F",
+            "link-color" : "#8B0000",
+            "alt-link-color" : "#8B0000",
+            "border-color" : "#A52A2A",
+            "alt-border-color" : "#A52A2A",
+            "button-color" : "#800000",
+            "alt-button-color" : "#800000"
+        }
+    },
+    {
+        "id" : "sunburst",
+        "name" : "Sunburst",
+        "colors" : {
+            "background-color" : "#FFD700",
+            "alt-background-color" : "#FFA500",
+            "text-color" : "#000000",
+            "alt-text-color" : "#696969",
+            "link-color" : "#FF4500",
+            "alt-link-color" : "#FF4500",
+            "border-color" : "#FF8C00",
+            "alt-border-color" : "#FF8C00",
+            "button-color" : "#FF6347",
+            "alt-button-color" : "#FF6347"
+        }
     }
 ]

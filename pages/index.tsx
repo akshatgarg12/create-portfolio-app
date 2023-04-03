@@ -18,10 +18,15 @@ const Home = () => {
         <div className='w-9/12 m-auto'>
            <h2 className='mb-4 text-xl font-bold'>{`<About />`}</h2>
            <p className='text-lg'>
-              I’m a passionate software engineer based in India, with experience in programming full stack applications and developing solutions at scales. I am well versed with javascript frameworks and frontend technologies like Nextjs, Qwik and CSS librariers like bootstrap, material-ui etc., I have also worked with backend systems and have experience of architecting scalable and secure backend systems and programming in Nodejs and python.
-              for my qualifications, I am computer science engineer from Birla Institute of technology, Mesra, I have been an academic award holder for my performance in higher secondary school.
-              My work experience ranges from working for big corporations like Microsoft to innovative startups like Builder.io, I also work as a freelance developer, checkout the experience page for more info.
-              I enjoy programming, tinkering with technology (find my projects here), hitting the gym and exploring new places and food. 
+            As a highly skilled software engineer based in India, I bring to the table a wealth of experience in programming full stack applications and developing solutions at scale. My proficiency in Javascript frameworks, including Nextjs and Qwik, and frontend technologies such as Bootstrap and Material-UI, enables me to deliver aesthetically pleasing and user-friendly interfaces that meet the highest standards of quality.
+
+            Furthermore, my expertise in backend systems and experience in programming in Nodejs and Python, enable me to design and architect secure, scalable, and high-performance systems that cater to complex business requirements. My technical acumen, combined with my educational qualifications, a Computer Science Engineering degree from Birla Institute of Technology, Mesra, and academic excellence, as a high-performing student in secondary school, speaks to my commitment to excellence in all endeavors.
+
+            My experience has spanned across working with big corporations like Microsoft, to innovative startups such as Builder.io. I also have extensive experience as a freelance developer, offering clients bespoke software solutions, custom-built to meet their unique needs.
+
+            Outside of the world of coding, I am an avid gym-goer, foodie, and love exploring new places. I am also passionate about tinkering with technology, and you can check out some of my projects on my website.
+
+            I am committed to using my skills to deliver exceptional results, and I am excited about the prospect of collaborating with you on your next project. Please do not hesitate to get in touch with me to discuss further.
            </p>
         </div>
       </section>
