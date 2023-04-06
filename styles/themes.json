@@ -9,7 +9,7 @@
             "alt-text-color" : "#faedcd",
             "link-color" : "#FDF0D5",
             "alt-link-color" : "#FDF0D5",
-            "border-color" : "#F0544F",
+            "border-color" : "#D81E5B",
             "alt-border-color" : "#F0544F",
             "button-color" : "#D81E5B",
             "alt-button-color" : "#D81E5B"
@@ -67,16 +67,16 @@
         "id" : "sunburst",
         "name" : "Sunburst",
         "colors" : {
-            "background-color" : "#FFD700",
-            "alt-background-color" : "#FFA500",
-            "text-color" : "#696969",
+            "background-color" : "#FFF5E6",
+            "alt-background-color" : "#ff8a5f",
+            "text-color" : "#333333",
             "alt-text-color" : "#F2EFE9",
             "link-color" : "#ff983f",
             "alt-link-color" : "#FF4500",
-            "border-color" : "#FF8C00",
+            "border-color" : "#ffe7e0",
             "alt-border-color" : "#FF8C00",
-            "button-color" : "#FF6347",
-            "alt-button-color" : "#FF6347"
+            "button-color" : "#ee6c4d",
+            "alt-button-color" : "#ee6c4d"
         }
     }
 ]
