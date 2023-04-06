@@ -26,8 +26,8 @@ const Navbar = ({pathname}:NavbarProps) => {
     ]
     return (
       <nav
-      className="relative flex w-full flex-wrap items-center justify-between bg-background py-3 text-text shadow-lg lg:flex-wrap lg:justify-start "
-      data-te-navbar-ref>
+        className="relative flex w-full flex-wrap items-center justify-between bg-background py-3 text-text shadow-lg lg:flex-wrap lg:justify-start "
+        data-te-navbar-ref>
       <div className="flex w-full flex-wrap items-center justify-between px-6">
         <button
           className="block border-0 bg-transparent py-2 px-2.5 text-text hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
