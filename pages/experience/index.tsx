@@ -1,5 +1,6 @@
 import ExperienceCard, { ExperienceCardProps } from "@/components/ExperienceCard";
 import { GetStaticProps } from "next";
+import { Fragment } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
   // TODO: A LINKEDIN PLUGIN WOULD BE NICE
@@ -19,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
       companyLogo: "/logos/ms.png",
     },
     {
-      companyName: "Microsoft Engage 2021",
+      companyName: "Microsoft Engage",
       jobTitle: "Software Engineer Mentee",
       duration: "2 months",
       description: ["Built Teams-like video conferencing app with webRTC APIs for mesh peer-to-peer connection.", "Developed user-friendly app features for teams, group messaging, invites, and video/audio controls.", "Deployed project and incorporated feedback to improve the app.", "Successfully delivered video conferencing app on time with ongoing support and enhancements."],
@@ -46,9 +47,8 @@ export default function ExperiencePage(props:ExperiencePageProps) {
       <section className="flex flex-col items-center p-4">
       {
         props.experiences.map((experience: ExperienceCardProps, index:number) => (
-          <>
+          <Fragment key={index}>
             <ExperienceCard
-              key={index}
               companyName={experience.companyName}
               jobTitle={experience.jobTitle}
               duration={experience.duration}
@@ -58,12 +58,12 @@ export default function ExperiencePage(props:ExperiencePageProps) {
             {
               experienceLength !== index + 1 && 
               <>
-                <span className="h-6 w-1 bg-border"></span>
-                <span className="h-4 w-4 rounded-full bg-border"></span>
-                <span className="h-6 w-1 bg-border"></span>
+                <span className="h-6 w-1 bg-border" />
+                <span className="h-4 w-4 rounded-full bg-border" />
+                <span className="h-6 w-1 bg-border" />
               </>
             }
-          </>
+          </Fragment>
         ))
       }
       </section>
