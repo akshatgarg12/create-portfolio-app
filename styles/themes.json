@@ -3,6 +3,7 @@
         "id" : "dark",
         "name" : "Dark",
         "colors" : {
+            "white" : "#FFFFFF",
             "background-color" : "#000000",
             "alt-background-color" : "#0c1821",
             "text-color" : "#EDF7F6",
@@ -19,6 +20,7 @@
         "id" : "minimalist",
         "name" : "Minimalist",
         "colors" : {
+            "white" : "#FFFFFF",
             "background-color" : "#FFFFFF",
             "alt-background-color" : "#F5F5F5",
             "text-color" : "#4A4A4A",
@@ -35,8 +37,9 @@
         "id" : "nature",
         "name" : "Nature",
         "colors" : {
-            "background-color" : "#98FB98",
-            "alt-background-color" : "#F0FFF0",
+            "white" : "#FFFFFF",
+            "background-color" : "#f0fff1",
+            "alt-background-color" : "#c2f8cb",
             "text-color" : "#4A4A4A",
             "alt-text-color" : "#cdfaf6",
             "link-color" : "#228B22",
@@ -51,6 +54,7 @@
         "id" : "vintage",
         "name" : "Vintage",
         "colors" : {
+            "white" : "#FFFFFF",
             "background-color" : "#F5DEB3",
             "alt-background-color" : "#FFDAB9",
             "text-color" : "#4A4A4A",
@@ -67,6 +71,7 @@
         "id" : "sunburst",
         "name" : "Sunburst",
         "colors" : {
+            "white" : "#FFFFFF",
             "background-color" : "#FFF5E6",
             "alt-background-color" : "#ff8a5f",
             "text-color" : "#333333",

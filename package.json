@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild" : "npm run tailwind:prod",
+    "prebuild": "npm run tailwind:prod",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tailwind:dev":"tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css --watch",
-    "tailwind:prod":"tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css"
+    "tailwind:dev": "tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css --watch",
+    "tailwind:prod": "tailwindcss -i ./styles/globals.css -o ./styles/tailwind.css"
   },
   "dependencies": {
     "@types/node": "18.15.7",
@@ -20,6 +20,7 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
     "tw-elements": "1.0.0-beta1",
     "typescript": "5.0.2"
   },
