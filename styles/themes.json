@@ -55,7 +55,7 @@
         "name" : "Vintage",
         "colors" : {
             "white" : "#FFFFFF",
-            "background-color" : "#F5DEB3",
+            "background-color" : "#fefae0",
             "alt-background-color" : "#FFDAB9",
             "text-color" : "#4A4A4A",
             "alt-text-color" : "#e8e5df",
@@ -65,23 +65,6 @@
             "alt-border-color" : "#A52A2A",
             "button-color" : "#800000",
             "alt-button-color" : "#800000"
-        }
-    },
-    {
-        "id" : "sunburst",
-        "name" : "Sunburst",
-        "colors" : {
-            "white" : "#FFFFFF",
-            "background-color" : "#FFF5E6",
-            "alt-background-color" : "#ff8a5f",
-            "text-color" : "#333333",
-            "alt-text-color" : "#F2EFE9",
-            "link-color" : "#ff983f",
-            "alt-link-color" : "#FF4500",
-            "border-color" : "#ffe7e0",
-            "alt-border-color" : "#FF8C00",
-            "button-color" : "#ee6c4d",
-            "alt-button-color" : "#ee6c4d"
         }
     }
 ]

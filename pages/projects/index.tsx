@@ -1,8 +1,5 @@
+import ProjectCard from "@/components/ProjectCard"
 import { GetStaticProps } from "next"
-import {TbGitFork} from 'react-icons/tb'
-import { AiOutlineStar, AiFillGithub} from 'react-icons/ai'
-import { BiCodeAlt } from 'react-icons/bi'
-import Link from "next/link"
 
 export const getStaticProps : GetStaticProps = async () => {
   const username = 'akshatgarg12'
@@ -34,31 +31,16 @@ export default function ProjectsPage(props : ProjectsPageProps) {
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
       {
         props.repos.slice(1,6).map((repo) => (
-          <>
-            <div className="flex flex-col p-3 w-full max-w-xl border border-1 border-border rounded-md bg-background text-text">
-              <h2 className="font-bold">{repo.name}</h2>
-              <p>{repo.description}</p>
-              <div className="text-sm flex flex row space-x-3 my-2">
-                <div className=" flex flex-row justify-center items-center space-x-0.5">
-                  <BiCodeAlt />
-                  <p>{repo.language.toLocaleLowerCase()}</p>
-                </div>
-                <div className="flex flex-row justify-center items-center space-x-0.5">
-                  <AiOutlineStar />
-                  <p>{repo.stargazers_count}</p>
-                </div>
-                <div className="ml-4 flex flex-row justify-center items-center space-x-0.5">
-                  <TbGitFork />
-                  <p>{repo.forks}</p>
-                </div>
-                <Link href={repo.html_url} className="font-light ml-4 flex flex-row justify-center items-center space-x-0.5">
-                  <AiFillGithub />
-                  <p className="">view on github</p>
-                </Link>
-              </div>
-             
-            </div>
-          </>
+         <ProjectCard 
+            key={repo.id} 
+            id={repo.id}
+            name={repo.name}
+            description={repo.description}
+            language={repo.language}
+            stargazers_count={repo.stargazers_count}
+            forks={repo.forks}
+            html_url={repo.html_url}
+          />
         ))
       }
     </div>
