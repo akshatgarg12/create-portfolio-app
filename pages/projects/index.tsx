@@ -5,15 +5,15 @@ export const getStaticProps : GetStaticProps = async () => {
   // config
   const username = 'akshatgarg12'
   const repos = ['The-Office', 'CodeDraw', 'Invester', 'GetFit', 'SSDiff', 'Microsoft-engage-project']
-  const responses = await Promise.allSettled(repos.map((repo) => fetch(`https://api.github.com/repos/${username}/${repo}`)))
-  const reposData = responses.map(async (response) => {
-      if(response.status === 'fulfilled') {
-       const data = await response.value?.json()
-       // TODO: made this dynamic based on Project interface  
-       const { id, name, description, language, stargazers_count, forks, html_url } = data
-       return { id, name, description, language, stargazers_count, forks, html_url }
-      }
+  const reposData = await Promise.allSettled(repos.map(async (repo) => {
+    const response = await fetch(`https://api.github.com/repos/${username}/${repo}`)
+    const data = await response.json()
+    const { id, name, description, language, stargazers_count, forks, html_url } = data
+    return { id, name, description, language, stargazers_count, forks, html_url }
+  })).then((results) => {
+    return results.map((result) => result.status === 'fulfilled' && result.value)
   })
+  
   return {
     props : {
       repos : reposData
