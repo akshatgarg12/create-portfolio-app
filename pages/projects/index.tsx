@@ -4,16 +4,13 @@ import { GetStaticProps } from "next"
 export const getStaticProps : GetStaticProps = async () => {
   // config
   const username = 'akshatgarg12'
-  const repos = ['The-Office', 'CodeDraw', 'Invester', 'GetFit', 'SSDiff', 'Microsoft-engage-project']
-  const reposData = await Promise.allSettled(repos.map(async (repo) => {
-    const response = await fetch(`https://api.github.com/repos/${username}/${repo}`)
-    const data = await response.json()
-    const { id, name, description, language, stargazers_count, forks, html_url } = data
+  const repos = ['The-Office', 'CodeDraw', 'Invester', 'GetFit', 'SSDiff', 'Microsoft-engage-project'].map((repo) => repo.toLowerCase())
+  const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`)
+  const data = await response.json()
+  const reposData = data.filter((repo:any) => repos.includes(repo.name.toLowerCase())).map((repo:any) => {
+    const { id, name, description, language, stargazers_count, forks, html_url } = repo
     return { id, name, description, language, stargazers_count, forks, html_url }
-  })).then((results) => {
-    return results.map((result) => result.status === 'fulfilled' && result.value)
   })
-  
   return {
     props : {
       repos : reposData
@@ -39,7 +36,7 @@ export default function ProjectsPage(props : ProjectsPageProps) {
     <div className="min-h-screen bg-altBackground">
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
       {
-        props.repos.slice(1,6).map((repo) => (
+        props.repos.map((repo) => (
          <ProjectCard 
             key={repo.id} 
             id={repo.id}

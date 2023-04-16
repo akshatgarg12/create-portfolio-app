@@ -28,10 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
                 ${
                   themes.map((themeItem) => {
                     if(themeItem.id === theme){
-                      console.log(Object.keys(themeItem.colors).map((color:string) => {
-                        // @ts-ignore
-                        return `--${color} : ${themeItem.colors[color]};`
-                      }).join('\n'))
                       return Object.keys(themeItem.colors).map((color:string) => {
                         // @ts-ignore
                         return `--${color} : ${themeItem.colors[color]};`
