@@ -1,10 +1,10 @@
 import ProjectCard from "@/components/ProjectCard"
 import { GetStaticProps } from "next"
+import ProjectsData from '@/config/projects.json'
 
 export const getStaticProps : GetStaticProps = async () => {
-  // config
-  const username = 'akshatgarg12'
-  const repos = ['The-Office', 'CodeDraw', 'Invester', 'GetFit', 'SSDiff', 'Microsoft-engage-project'].map((repo) => repo.toLowerCase())
+  const username = ProjectsData.github_username
+  const repos = ProjectsData.projects.map((repo) => repo.toLowerCase())
   const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`)
   const data = await response.json()
   const reposData = data.filter((repo:any) => repos.includes(repo.name.toLowerCase())).map((repo:any) => {
