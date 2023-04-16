@@ -1,11 +1,12 @@
-import {usePathname} from 'next/navigation'
 import Link from "next/link";
+import { useState } from 'react';
 
 interface NavbarProps{
   pathname : string
 }
 
 const Navbar = ({pathname}:NavbarProps) => {
+    const [showMenuOnMobile, setShowMenuOnMobile] = useState(false)
     const links = [
       {
         href: "/",
@@ -31,12 +32,7 @@ const Navbar = ({pathname}:NavbarProps) => {
       <div className="flex w-full flex-wrap items-center justify-between px-6">
         <button
           className="block border border-solid border-link bg-transparent py-2 px-2.5 text-text hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
-          type="button"
-          data-te-collapse-init
-          data-te-target="#navbarSupportedContent4"
-          aria-controls="navbarSupportedContent4"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
+          onClick={() => setShowMenuOnMobile(!showMenuOnMobile)}>
           <span className="[&>svg]:w-7">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +47,7 @@ const Navbar = ({pathname}:NavbarProps) => {
           </span>
         </button>
         <div
-          className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          className={`${!showMenuOnMobile && "!visible hidden"} flex-grow basis-[100%] items-center lg:!flex lg:basis-auto`}
           id="navbarSupportedContent4"
           data-te-collapse-item>
           <ul

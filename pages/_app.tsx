@@ -2,7 +2,6 @@ import Layout from '@/components/Layout'
 import '@/styles/globals.css'
 import '@/styles/tailwind.css'
 import Head from 'next/head'
-import Script from 'next/script'
 import themes from '@/styles/themes.json'
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
@@ -48,7 +47,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Layout>
       </ThemeContext.Provider>
-      <Script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></Script>
     </>
   )
 }
