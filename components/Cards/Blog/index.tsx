@@ -19,6 +19,7 @@ const BlogCard = (props: BlogCardProps) => {
             height={150}
             width={150}
             className="m-auto"
+            priority
           />
           <h3 className="font-bold text-xl mb-2">{props.title}</h3>
           <p className="font-md text-base">{props.description}</p>
