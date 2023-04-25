@@ -4,10 +4,6 @@ export default function BlogLayout({ children, meta }: any) {
   return (
     <>
       <Head>
-        <title>{meta.title}</title>
-        <meta charSet="utf-8" />
-        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link
           rel="preload"
           href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
@@ -18,9 +14,9 @@ export default function BlogLayout({ children, meta }: any) {
           rel="stylesheet"
         />
       </Head>
-      <div id="skip">
+      <div className="bg-background m-0">
         <article
-          className="prose lg:prose-xl px-8 m-auto my-4 sm:my-16"
+          className="prose lg:prose-xl text-text px-8 m-auto py-4 sm:py-16"
           dangerouslySetInnerHTML={{ __html: children }}
         />
       </div>

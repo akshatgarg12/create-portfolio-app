@@ -1,7 +1,6 @@
 import BlogLayout from "@/components/BlogLayout.tsx";
 import { getAllBlogs, getBlogBySlug } from "@/lib/blog";
 import markdownToHtml from "@/lib/markdown";
-import { notFound } from "next/navigation";
 
 export default function Blog({ meta, content }: any) {
   return <BlogLayout meta={meta}>{content}</BlogLayout>;
