@@ -12,13 +12,18 @@ export function getBlogBySlug(slug: string) {
     const { data, content } = matter(fileContents);
     return { slug: realSlug, meta: data, content };
   } catch (e) {
-    throw new Error("Could not find blog");
+    throw new Error("Could not find blog : ", e as Error);
   }
 }
 
 export function getAllBlogs() {
   const slugs = fs.readdirSync(blogsDirectory);
-  const blogs = slugs.map((slug) => getBlogBySlug(slug));
-
+  const blogs = slugs.map((slug) => {
+    try {
+      return getBlogBySlug(slug);
+    } catch (e) {
+      console.log(`Error occured while reading blog : ${slug}`, e);
+    }
+  });
   return blogs;
 }
