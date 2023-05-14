@@ -1,6 +1,23 @@
 import BlogCard from "@/components/Cards/Blog";
+import { getAllBlogs } from "@/lib/blog";
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const blogs = getAllBlogs();
+  // console.log(blogs);
+  return {
+    props: {
+      blogs,
+    },
+  };
+};
+
+export interface Blog {
+  slug: string;
+  meta: { title: string; img: string; description: string };
+  content: string;
+}
+
+export default function Blog({ blogs }: { blogs: Blog[] }) {
   return (
     <section className="bg-background min-h-screen py-10">
       <div className="flex flex-col items-center justify-center">
@@ -8,14 +25,14 @@ export default function Home() {
           Tech / Productivity / Experience
         </h4>
         <section className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-3">
-          {[1, 2, 3, 4].map((id) => {
+          {blogs.map((blog) => {
             return (
               <BlogCard
-                key={id}
-                id={id}
-                title="How to use the new Next.js Image Component"
-                img="/logos/ms.png"
-                description=", nec ultricies nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nisl nisl sit amet nisl."
+                key={blog.slug}
+                id={blog.slug}
+                title={blog.meta.title}
+                img={blog.meta.img}
+                description={blog.meta.description}
               />
             );
           })}

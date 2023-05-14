@@ -16,7 +16,7 @@ export default function BlogLayout({ children, meta }: any) {
       </Head>
       <div className="bg-background m-0">
         <article
-          className="prose lg:prose-xl text-text px-8 m-auto py-4 sm:py-16"
+          className="prose lg:prose-xl min-h-screen text-text px-8 m-auto py-4 sm:py-16"
           dangerouslySetInnerHTML={{ __html: children }}
         />
       </div>

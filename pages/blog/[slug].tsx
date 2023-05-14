@@ -1,8 +1,8 @@
 import BlogLayout from "@/components/BlogLayout.tsx";
 import { getAllBlogs, getBlogBySlug } from "@/lib/blog";
 import markdownToHtml from "@/lib/markdown";
-
-export default function Blog({ meta, content }: any) {
+import type { Blog } from "@/pages/blog";
+export default function Blog({ meta, content }: Blog) {
   return <BlogLayout meta={meta}>{content}</BlogLayout>;
 }
 
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   const blogs = getAllBlogs();
 
   return {
-    paths: blogs.map((blog) => {
+    paths: blogs.map((blog: any) => {
       return {
         params: {
           slug: blog.slug,
