@@ -3,7 +3,6 @@ import { getAllBlogs } from "@/lib/blog";
 
 export const getStaticProps = async () => {
   const blogs = getAllBlogs();
-  // console.log(blogs);
   return {
     props: {
       blogs,

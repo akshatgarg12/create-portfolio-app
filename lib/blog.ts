@@ -12,7 +12,6 @@ export function getBlogBySlug(slug: string) {
     const { data, content } = matter(fileContents);
     return { slug: realSlug, meta: data, content };
   } catch (e) {
-    console.log(e);
     throw new Error("Could not find blog : ", e as Error);
   }
 }
