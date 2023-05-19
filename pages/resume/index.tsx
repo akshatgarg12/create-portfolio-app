@@ -12,8 +12,8 @@ export default function Resume() {
         </h4>
         <iframe
           title="resume.pdf"
-          src="/documents/resume.pdf#zoom=100"
-          className="min-w-[80%] min-h-[80vh] sm:min-h-screen m-auto"
+          src="/documents/resume.pdf#view=fit"
+          className="min-w-[95%] sm:min-w-[80%] min-h-[80vh] sm:min-h-screen m-auto"
         />
       </div>
     </>
