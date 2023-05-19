@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtext": "Personal / Open Source / Freelance"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtext": "Work / Internship / Volunteering"
+  },
+  "blogs": {
+    "title": "Blogs",
+    "subtext": "Tech / Productivity / Experience"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtext": "Resume / CV / Portfolio"
+  }
+}

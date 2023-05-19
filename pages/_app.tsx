@@ -1,3 +1,4 @@
+import { appWithTranslation } from "next-i18next";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import "@/styles/tailwind.css";
@@ -10,7 +11,7 @@ import { DefaultSeo } from "next-seo";
 import defaultSeoConfig from "@/config/defaultSeo.config";
 import ThemeContext from "@/context/theme";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname();
   const [theme, setTheme] = useState("dark");
 
@@ -53,3 +54,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);
