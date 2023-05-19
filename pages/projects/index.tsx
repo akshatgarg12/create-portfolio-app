@@ -1,9 +1,14 @@
 import ProjectCard from "@/components/Cards/Project";
 import { GetStaticProps } from "next";
 import ProjectsData from "@/config/projects.json";
-import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "../../next-i18next.config";
 
-export const getStaticProps: GetStaticProps = async () => {
+import Head from "next/head";
+import Subtext from "@/components/Subtext";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const username = ProjectsData.github_username;
   const repos = ProjectsData.projects.map((repo) => repo.toLowerCase());
   const response = await fetch(
@@ -35,6 +40,9 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       repos: reposData,
+      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+        "common",
+      ])),
     },
   };
 };
@@ -53,12 +61,14 @@ export interface ProjectsPageProps {
   repos: Project[];
 }
 export default function ProjectsPage(props: ProjectsPageProps) {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
-        <title>Projects</title>
+        <title>{t("projects.title")}</title>
       </Head>
-      <div className="min-h-screen bg-altBackground">
+      <div className="min-h-screen bg-altBackground py-10">
+        <Subtext text={t("projects.subtext")} />
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
           {props.repos.map((repo) => (
             <ProjectCard

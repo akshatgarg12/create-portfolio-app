@@ -4,14 +4,22 @@ import ExperienceCard, {
 import { GetStaticProps } from "next";
 import { Fragment } from "react";
 import ExperienceData from "@/config/experience.json";
-import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "../../next-i18next.config";
 
-export const getStaticProps: GetStaticProps = async () => {
+import Head from "next/head";
+import Subtext from "@/components/Subtext";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   // TODO: A LINKEDIN PLUGIN WOULD BE NICE
   const experiences = ExperienceData.jobs;
   return {
     props: {
       experiences,
+      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+        "common",
+      ])),
     },
   };
 };
@@ -21,14 +29,15 @@ export interface ExperiencePageProps {
 }
 
 export default function ExperiencePage(props: ExperiencePageProps) {
+  const { t } = useTranslation("common");
   const experienceLength = props.experiences.length;
-
   return (
     <>
       <Head>
-        <title>Experience</title>
+        <title>{t("experience.title")}</title>
       </Head>
       <section className="bg-background min-h-screen py-10">
+        <Subtext text={t("experience.subtext")} />
         <section className="flex flex-col items-center p-4">
           {props.experiences.map(
             (experience: ExperienceCardProps, index: number) => (

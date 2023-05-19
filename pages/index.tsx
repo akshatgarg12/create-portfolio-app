@@ -5,6 +5,8 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "../next-i18next.config";
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const { name, title, about, contact, myImage } = HomeData;
   return {
@@ -14,7 +16,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       about,
       contact,
       myImage,
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+        "common",
+      ])),
     },
   };
 };
