@@ -9,6 +9,7 @@ A minimalistic portfolio template with blogs (markdown support), made for develo
 - Projects page , integrated with github API to fetch projects mentioned in `config/projects.json`
 - Blogs page with blogs rendered from `/blogs` folder
 - Multi themed, add more themes by adding in `themes.json`
+- Comes with i18n configured to support multiple locales, add a new locale by adding in `public/some-lang/common.json` use object from `en` folder and change that for ease.
 - Statically generated pages for performance! 🚀
 
 ## Create your own

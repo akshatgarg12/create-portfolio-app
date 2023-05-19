@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   pathname: string;
@@ -7,28 +8,41 @@ interface NavbarProps {
 
 const Navbar = ({ pathname }: NavbarProps) => {
   const [showMenuOnMobile, setShowMenuOnMobile] = useState(false);
-  const links = [
-    {
-      href: "/",
-      label: "Home",
-    },
-    {
-      href: "/projects",
-      label: "Projects",
-    },
-    {
-      href: "/experience",
-      label: "Experience",
-    },
-    {
-      href: "/blog",
-      label: "Blog",
-    },
-    {
-      href: "/resume",
-      label: "Resume",
-    },
-  ];
+  const { t } = useTranslation("common");
+  const [navbarLinks, setNavbarLinks] = useState<any[]>([]);
+  useEffect(() => {
+    const links = [
+      {
+        key: "home",
+        href: "/",
+      },
+      {
+        key: "projects",
+        href: "/projects",
+      },
+      {
+        key: "experience",
+        href: "/experience",
+      },
+      {
+        key: "blog",
+        href: "/blog",
+      },
+      {
+        key: "resume",
+        href: "/resume",
+      },
+    ];
+    setNavbarLinks(() => {
+      return links.map((link) => {
+        return {
+          key: link.key,
+          label: t(`nav.${link.key}.label`),
+          href: link.href,
+        };
+      });
+    });
+  }, [t]);
   return (
     <nav
       className="relative flex w-full flex-wrap items-center justify-between bg-background py-3 text-text shadow-lg lg:flex-wrap lg:justify-start"
@@ -66,12 +80,13 @@ const Navbar = ({ pathname }: NavbarProps) => {
             style={{ margin: "auto" }}
             data-te-navbar-nav-ref
           >
-            {links.map((link, idx) => {
+            {navbarLinks.map((link, idx) => {
               return (
                 <li key={idx} className="p-2" data-te-nav-item-ref>
                   <Link
                     className={`text-link ${
-                      pathname !== link.href && "opacity-60"
+                      pathname.toLocaleLowerCase() !==
+                        link.href.toLocaleLowerCase() && "opacity-60"
                     } hover:opacity-80 lg:px-2`}
                     href={link.href}
                     data-te-nav-link-ref

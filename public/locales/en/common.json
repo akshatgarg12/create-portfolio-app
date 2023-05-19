@@ -1,0 +1,40 @@
+{
+  "home": {
+    "title": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtext": "Personal / Open Source / Freelance"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtext": "Work / Internship / Volunteering"
+  },
+  "blog": {
+    "title": "Blogs",
+    "subtext": "Tech / Productivity / Experience"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtext": "Resume / CV / Portfolio"
+  },
+  "nav": {
+    "home": {
+      "label": "Home"
+    },
+    "projects": {
+      "label": "Projects"
+    },
+    "experience": {
+      "label": "Experience"
+    },
+    "blog": {
+      "label": "Blog"
+    },
+    "resume": {
+      "label": "Resume"
+    }
+  }
+}
