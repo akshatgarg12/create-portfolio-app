@@ -2,8 +2,16 @@ import BlogLayout from "@/components/BlogLayout.tsx";
 import { getAllBlogs, getBlogBySlug } from "@/lib/blog";
 import markdownToHtml from "@/lib/markdown";
 import type { Blog } from "@/pages/blog";
+import Head from "next/head";
 export default function Blog({ meta, content }: Blog) {
-  return <BlogLayout meta={meta}>{content}</BlogLayout>;
+  return (
+    <>
+      <Head>
+        <title>{meta.title}</title>
+      </Head>
+      <BlogLayout meta={meta}>{content}</BlogLayout>
+    </>
+  );
 }
 
 export async function getStaticProps({ params }: any) {

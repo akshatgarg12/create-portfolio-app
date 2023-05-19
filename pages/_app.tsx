@@ -6,6 +6,8 @@ import themes from "@/styles/themes.json";
 import type { AppProps } from "next/app";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { DefaultSeo } from "next-seo";
+import defaultSeoConfig from "@/config/defaultSeo.config";
 import ThemeContext from "@/context/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -14,10 +16,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <DefaultSeo {...defaultSeoConfig} />
       <Head>
-        <title>Akshat Garg</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Personal portfolio of akshat garg" />
+        {/* TODO: replace this with a favicon */}
+        <link rel="icon" href="/me.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style>
           {`
