@@ -2,6 +2,7 @@ import Image from "next/image";
 import Contact from "@/components/Contact";
 import HomeData from "@/config/home.json";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 
 export const getStaticProps: GetStaticProps = () => {
   const { name, title, about, contact, myImage } = HomeData;
@@ -34,6 +35,9 @@ export interface HomePropsType {
 const Home = ({ name, title, about, contact, myImage }: HomePropsType) => {
   return (
     <>
+      <Head>
+        <title>Home | {name}</title>
+      </Head>
       <section className="p-60 flex flex-col items-center bg-altBackground text-text text-center">
         <Image
           className="rounded-md"

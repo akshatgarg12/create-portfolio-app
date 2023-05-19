@@ -15,5 +15,7 @@ A minimalistic portfolio template with blogs (markdown support), made for develo
 
 - Fork / Clone the repo
 - Change the data in `/config` folder
+- Add assets like hero images, company logos in public folder
+- Add your resume in `public/documents` as `resume.pdf`
 - Publish first blog in `/blog` folder
 - Easy deploy on vercel

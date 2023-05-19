@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/Cards/Project";
 import { GetStaticProps } from "next";
 import ProjectsData from "@/config/projects.json";
+import Head from "next/head";
 
 export const getStaticProps: GetStaticProps = async () => {
   const username = ProjectsData.github_username;
@@ -53,21 +54,26 @@ export interface ProjectsPageProps {
 }
 export default function ProjectsPage(props: ProjectsPageProps) {
   return (
-    <div className="min-h-screen bg-altBackground">
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
-        {props.repos.map((repo) => (
-          <ProjectCard
-            key={repo.id}
-            id={repo.id}
-            name={repo.name}
-            description={repo.description}
-            language={repo.language}
-            stargazers_count={repo.stargazers_count}
-            forks={repo.forks}
-            html_url={repo.html_url}
-          />
-        ))}
+    <>
+      <Head>
+        <title>Projects</title>
+      </Head>
+      <div className="min-h-screen bg-altBackground">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
+          {props.repos.map((repo) => (
+            <ProjectCard
+              key={repo.id}
+              id={repo.id}
+              name={repo.name}
+              description={repo.description}
+              language={repo.language}
+              stargazers_count={repo.stargazers_count}
+              forks={repo.forks}
+              html_url={repo.html_url}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
