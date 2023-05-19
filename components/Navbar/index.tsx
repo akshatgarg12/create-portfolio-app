@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   pathname: string;
@@ -7,26 +8,27 @@ interface NavbarProps {
 
 const Navbar = ({ pathname }: NavbarProps) => {
   const [showMenuOnMobile, setShowMenuOnMobile] = useState(false);
+  const { t } = useTranslation("common");
   const links = [
     {
+      key: "home",
       href: "/",
-      label: "Home",
     },
     {
+      key: "projects",
       href: "/projects",
-      label: "Projects",
     },
     {
+      key: "experience",
       href: "/experience",
-      label: "Experience",
     },
     {
+      key: "blog",
       href: "/blog",
-      label: "Blog",
     },
     {
+      key: "resume",
       href: "/resume",
-      label: "Resume",
     },
   ];
   return (
@@ -76,7 +78,7 @@ const Navbar = ({ pathname }: NavbarProps) => {
                     href={link.href}
                     data-te-nav-link-ref
                   >
-                    {link.label}
+                    {t(`nav.${link.key}.label`)}
                   </Link>
                 </li>
               );

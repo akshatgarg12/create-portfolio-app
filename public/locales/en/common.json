@@ -19,5 +19,22 @@
   "resume": {
     "title": "Resume",
     "subtext": "Resume / CV / Portfolio"
+  },
+  "nav": {
+    "home": {
+      "label": "Home"
+    },
+    "projects": {
+      "label": "Projects"
+    },
+    "experience": {
+      "label": "Experience"
+    },
+    "blog": {
+      "label": "Blog"
+    },
+    "resume": {
+      "label": "Resume"
+    }
   }
 }
