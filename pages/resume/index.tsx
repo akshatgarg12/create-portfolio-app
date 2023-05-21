@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../../next-i18next.config";
 import { GetStaticProps } from "next/types";
 import PdfViewer from "@/components/PdfViewer";
+import Subtext from "@/components/Subtext";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -23,9 +24,7 @@ export default function Resume() {
         <title>{t("resume.title")}</title>
       </Head>
       <div className="bg-background min-h-[90vh] py-10 flex-flex-col justify-center">
-        <h4 className="text-2xl font-bold text-text text-center mb-6">
-          {t("resume.title")}
-        </h4>
+        <Subtext text={t("resume.title")} />
         <div className="w-max-full">
           <PdfViewer file={"/documents/resume.pdf"} />
         </div>

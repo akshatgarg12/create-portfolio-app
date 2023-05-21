@@ -113,11 +113,13 @@ const Home = ({
       </section>
       {enableFeedbackSection && (
         <section className="py-30 flex flex-col items-center bg-background text-text">
-          <div className="w-10/12 m-auto">
-            <div className="w-9/12">
-              <h2 className="mb-4 text-xl font-bold">{t("home.feedback")}</h2>
+          <div className="w-full m-auto">
+            <div className="w-9/12 m-auto">
+              <h2 className="mb-4 text-xl underline font-bold">
+                {t("home.feedback")}
+              </h2>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="w-11/12 sm:w-9/12 m-auto grid grid-cols-1 lg:grid-cols-2">
               {feedbacks.map((feedback, idx) => (
                 <FeedbackCard key={idx} {...feedback} />
               ))}
