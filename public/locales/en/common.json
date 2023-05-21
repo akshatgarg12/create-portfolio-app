@@ -36,5 +36,8 @@
     "resume": {
       "label": "Resume"
     }
+  },
+  "footer": {
+    "text": "Designed and Developed at"
   }
 }
