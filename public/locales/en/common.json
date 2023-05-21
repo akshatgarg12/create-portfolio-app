@@ -1,5 +1,7 @@
 {
   "home": {
+    "salutation": "Hey 👋🏼, I'm",
+    "workedAt": "Worked at",
     "title": "Home",
     "about": "About",
     "contact": "Contact"
