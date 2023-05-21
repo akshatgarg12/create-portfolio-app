@@ -7,6 +7,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../next-i18next.config";
 import FeedbackCard, { FeedbackCardProps } from "@/components/Cards/Feedback";
+import { Fragment } from "react";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -70,12 +71,10 @@ const Home = ({
             <h3 className="text-2xl">
               {t("home.salutation") + " "}
               {name.split(" ").map((n, idx) => (
-                <>
-                  <span key={idx} className="text-link">
-                    {n[0]}
-                  </span>
+                <Fragment key={idx}>
+                  <span className="text-link">{n[0]}</span>
                   {n.slice(1) + " "}
-                </>
+                </Fragment>
               ))}
               <br />
               <span className="text-link opacity-75">{title}</span>
@@ -109,8 +108,10 @@ const Home = ({
       </section>
       {enableFeedbackSection && (
         <section className="py-30 flex flex-col items-center bg-background text-text">
-          <div className="w-9/12 m-auto">
-            <h2 className="mb-4 text-xl font-bold">{t("home.feedback")}</h2>
+          <div className="w-10/12 m-auto">
+            <div className="w-9/12">
+              <h2 className="mb-4 text-xl font-bold">{t("home.feedback")}</h2>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {feedbacks.map((feedback, idx) => (
                 <FeedbackCard key={idx} {...feedback} />
