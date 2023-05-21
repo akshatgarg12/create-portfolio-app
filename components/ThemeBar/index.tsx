@@ -5,10 +5,10 @@ import ThemeContext from "@/context/theme";
 const ThemeBar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div className="flex flex-row justify-end bg-altText py-2">
+    <div className="flex flex-row justify-center py-2">
       {themes.map((themeItem) => {
         const isCurrentTheme = themeItem.id === theme;
-        const themeBackgroundColor = themeItem.colors["background-color"];
+        const themeBackgroundColor = themeItem.colors["select-color"];
         return (
           <div
             key={themeItem.id}
