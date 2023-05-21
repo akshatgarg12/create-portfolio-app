@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../../next-i18next.config";
 import { GetStaticProps } from "next/types";
+import PdfViewer from "@/components/PdfViewer";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -21,15 +22,13 @@ export default function Resume() {
       <Head>
         <title>{t("resume.title")}</title>
       </Head>
-      <div className="bg-background min-h-[90vh] py-10">
+      <div className="bg-background min-h-[90vh] py-10 flex-flex-col justify-center">
         <h4 className="text-2xl font-bold text-text text-center mb-6">
           {t("resume.title")}
         </h4>
-        <iframe
-          title="resume.pdf"
-          src="/documents/resume.pdf#view=fit"
-          className="min-w-[95%] sm:min-w-[80%] min-h-[80vh] sm:min-h-screen m-auto"
-        />
+        <div className="w-max-full">
+          <PdfViewer file={"/documents/resume.pdf"} />
+        </div>
       </div>
     </>
   );

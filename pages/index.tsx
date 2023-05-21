@@ -79,16 +79,21 @@ const Home = ({
               <br />
               <span className="text-link opacity-75">{title}</span>
             </h3>
-            <div className="flex flex-col sm:flex-row justify-center">
-              <h4 className="m-auto opacity-75 font-normal mt-5">
+            <div className="flex flex-row justify-center">
+              <h4 className="m-auto opacity-75 font-normal">
                 {t("home.workedAt") + " "}{" "}
               </h4>
-              <div className="flex flex-row justify-center">
+              <div className="flex flex-row justify-center max-w-[70%]">
                 {workedAt.map((companyLogo, idx) => (
                   <Image
                     key={idx}
                     height="85"
                     width="85"
+                    style={{
+                      height: "85px",
+                      width: "85px",
+                      objectFit: "contain",
+                    }}
                     alt="company-logo"
                     src={companyLogo}
                   />
