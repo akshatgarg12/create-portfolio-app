@@ -1,7 +1,10 @@
 {
   "home": {
+    "salutation": "Hey 👋🏼, I'm",
+    "workedAt": "Worked at",
     "title": "Home",
     "about": "About",
+    "feedback": "Hear it from people I've worked with",
     "contact": "Contact"
   },
   "projects": {
@@ -36,5 +39,12 @@
     "resume": {
       "label": "Resume"
     }
+  },
+  "footer": {
+    "text": "Designed and Developed at"
+  },
+  "404page": {
+    "title": "404 Not Found",
+    "subtext": "Oops! Looks like you've wandered off the beaten path.\nThis page seems to have gone on an adventure of its own and couldn't find its way back.\nDon't worry, though! While we can't offer you the exact content you were searching for, Here are some book recommendations for developers :)\n"
   }
 }

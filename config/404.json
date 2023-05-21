@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "name": "Clean Code",
+      "author": "Robert C. Martin"
+    },
+    {
+      "name": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas"
+    },
+    {
+      "name": "Design Patterns",
+      "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides"
+    }
+  ]
+}

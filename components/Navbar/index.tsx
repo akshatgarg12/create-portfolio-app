@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { useTranslation } from "next-i18next";
 
 interface NavbarProps {
   pathname: string;
@@ -9,40 +9,36 @@ interface NavbarProps {
 const Navbar = ({ pathname }: NavbarProps) => {
   const [showMenuOnMobile, setShowMenuOnMobile] = useState(false);
   const { t } = useTranslation("common");
-  const [navbarLinks, setNavbarLinks] = useState<any[]>([]);
-  useEffect(() => {
-    const links = [
-      {
-        key: "home",
-        href: "/",
-      },
-      {
-        key: "projects",
-        href: "/projects",
-      },
-      {
-        key: "experience",
-        href: "/experience",
-      },
-      {
-        key: "blog",
-        href: "/blog",
-      },
-      {
-        key: "resume",
-        href: "/resume",
-      },
-    ];
-    setNavbarLinks(() => {
-      return links.map((link) => {
-        return {
-          key: link.key,
-          label: t(`nav.${link.key}.label`),
-          href: link.href,
-        };
-      });
-    });
-  }, [t]);
+  const links = [
+    {
+      key: "home",
+      href: "/",
+    },
+    {
+      key: "projects",
+      href: "/projects",
+    },
+    {
+      key: "experience",
+      href: "/experience",
+    },
+    {
+      key: "blog",
+      href: "/blog",
+    },
+    {
+      key: "resume",
+      href: "/resume",
+    },
+  ];
+  const navbarLinks = links.map((link) => {
+    return {
+      key: link.key,
+      label: t(`nav.${link.key}.label`),
+      href: link.href,
+    };
+  });
+
   return (
     <nav
       className="relative flex w-full flex-wrap items-center justify-between bg-background py-3 text-text shadow-lg lg:flex-wrap lg:justify-start"

@@ -67,7 +67,7 @@ export default function ProjectsPage(props: ProjectsPageProps) {
       <Head>
         <title>{t("projects.title")}</title>
       </Head>
-      <div className="min-h-screen bg-altBackground py-10">
+      <div className="min-h-[90vh] bg-background py-10">
         <Subtext text={t("projects.subtext")} />
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
           {props.repos.map((repo) => (

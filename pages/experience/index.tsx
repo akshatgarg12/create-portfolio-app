@@ -36,7 +36,7 @@ export default function ExperiencePage(props: ExperiencePageProps) {
       <Head>
         <title>{t("experience.title")}</title>
       </Head>
-      <section className="bg-background min-h-screen py-10">
+      <section className="bg-background min-h-[90vh] py-10">
         <Subtext text={t("experience.subtext")} />
         <section className="flex flex-col items-center p-4">
           {props.experiences.map(

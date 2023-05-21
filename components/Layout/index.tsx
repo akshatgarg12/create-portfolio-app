@@ -1,19 +1,19 @@
+import Footer from "../Footer";
 import Navbar from "../Navbar";
-import ThemeBar from "../ThemeBar";
 
-interface LayoutProps{
-    pathname : string
-    children : React.ReactNode
+interface LayoutProps {
+  pathname: string;
+  children: React.ReactNode;
 }
 
-const Layout = ({pathname, children} : LayoutProps) => {
-    return (
-        <>
-            <Navbar pathname = {pathname}/>
-            <ThemeBar />
-            <main>{children}</main>
-        </>
-    );
-}
- 
+const Layout = ({ pathname, children }: LayoutProps) => {
+  return (
+    <>
+      <Navbar pathname={pathname} />
+      <main className="min-h-[90vh]">{children}</main>
+      <Footer />
+    </>
+  );
+};
+
 export default Layout;
