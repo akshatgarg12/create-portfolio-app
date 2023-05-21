@@ -27,7 +27,7 @@ export interface Blog {
 export default function Blog({ blogs }: { blogs: Blog[] }) {
   const { t } = useTranslation("common");
   return (
-    <section className="bg-background min-h-screen py-10">
+    <section className="bg-background min-h-[90vh] py-10">
       <div className="flex flex-col items-center justify-center">
         <Subtext text={t("blog.subtext")} />
         <section className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-3">

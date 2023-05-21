@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeBar from "../ThemeBar";
 
 const Footer = () => {
+  // TODO: add i18n
   return (
     <div className="min-w-full min-h-[20vh] bg-altBackground flex flex-col justify-center">
       <ThemeBar />

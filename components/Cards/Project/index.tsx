@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ProjectCard = (props: Project) => {
   return (
-    <div className="flex flex-col p-3 w-full max-w-xl border border-1 border-border rounded-md bg-background text-text">
+    <div className="flex flex-col p-3 w-full max-w-xl border border-1 border-border rounded-md bg-altBackground text-text">
       <h2 className="font-bold">{props.name}</h2>
       <p>{props.description}</p>
       <div className="text-sm flex flex row space-x-3 my-2">
