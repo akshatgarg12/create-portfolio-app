@@ -10,5 +10,27 @@
     "linkedin_url": "https://www.linkedin.com/in/akshat-garg-1a1b3b1a3/"
   },
   "myImage": "/me.png",
-  "workedAt": ["/logos/ms.png", "/logos/builderio.svg"]
+  "workedAt": ["/logos/ms.png", "/logos/builderio.svg"],
+  "enableFeedbackSection": true,
+  "feedbacks": [
+    {
+      "author": "Akshat garg",
+      "position": "Software Engineer | Builder.io",
+      "author_img": "/me.png",
+      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!",
+      "linkedin_url": "https://www.linkedin.com/in/akshat-garg-1a1b3b1a3/"
+    },
+    {
+      "author": "Akshat garg",
+      "position": "Software Engineer | Builder.io",
+      "author_img": "/me.png",
+      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!"
+    },
+    {
+      "author": "Akshat garg",
+      "position": "Software Engineer | Builder.io",
+      "author_img": "/me.png",
+      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!"
+    }
+  ]
 }

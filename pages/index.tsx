@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../next-i18next.config";
-import FeedbackCard from "@/components/Cards/Feedback";
+import FeedbackCard, { FeedbackCardProps } from "@/components/Cards/Feedback";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -33,6 +33,8 @@ export interface HomePropsType {
   contact: ContactType;
   myImage: string;
   workedAt: string[];
+  enableFeedbackSection: boolean;
+  feedbacks: FeedbackCardProps[];
 }
 
 const Home = ({
@@ -42,6 +44,8 @@ const Home = ({
   contact,
   myImage,
   workedAt,
+  enableFeedbackSection,
+  feedbacks,
 }: HomePropsType) => {
   const { t } = useTranslation("common");
   const documentTitle = `${t("home.title")} | ${name}`;
@@ -103,14 +107,20 @@ const Home = ({
           <p className="text-lg">{about}</p>
         </div>
       </section>
-      <section className="py-30 flex flex-col items-center bg-background text-text">
-        <div className="w-9/12 m-auto">
-          <h2 className="mb-4 text-xl font-bold">
-            Hear it from people I`&apos;ve worked with
-          </h2>
-          <FeedbackCard />
-        </div>
-      </section>
+      {enableFeedbackSection && (
+        <section className="py-30 flex flex-col items-center bg-background text-text">
+          <div className="w-9/12 m-auto">
+            <h2 className="mb-4 text-xl font-bold">
+              Hear it from people I&apos;ve worked with
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              {feedbacks.map((feedback, idx) => (
+                <FeedbackCard key={idx} {...feedback} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <section className="py-30 flex flex-col items-center bg-altBackground text-text">
         <div className="w-9/12 m-auto">
           <h2 className="mb-4 text-xl underline font-bold">
