@@ -1,4 +1,4 @@
-import BlogLayout from "@/components/BlogLayout.tsx";
+import BlogLayout from "@/components/BlogLayout";
 import { getAllBlogs, getBlogBySlug } from "@/lib/blog";
 import markdownToHtml from "@/lib/markdown";
 import type { Blog } from "@/pages/blog";
