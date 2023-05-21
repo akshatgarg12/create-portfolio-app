@@ -2,7 +2,11 @@ import BlogLayout from "@/components/BlogLayout.tsx";
 import { getAllBlogs, getBlogBySlug } from "@/lib/blog";
 import markdownToHtml from "@/lib/markdown";
 import type { Blog } from "@/pages/blog";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "../../next-i18next.config";
 import Head from "next/head";
+import { GetStaticProps } from "next";
+
 export default function Blog({ meta, content }: Blog) {
   return (
     <>
@@ -14,21 +18,25 @@ export default function Blog({ meta, content }: Blog) {
   );
 }
 
-export async function getStaticProps({ params }: any) {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   try {
-    const blog = getBlogBySlug(params.slug);
+    if (!params || !params.slug) return { notFound: true };
+    const blog = getBlogBySlug(params.slug.toString());
     const content = await markdownToHtml(blog.content || "");
 
     return {
       props: {
         ...blog,
         content,
+        ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+          "common",
+        ])),
       },
     };
   } catch (e) {
     return { notFound: true };
   }
-}
+};
 
 export async function getStaticPaths() {
   const blogs = getAllBlogs();

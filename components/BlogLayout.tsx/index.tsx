@@ -22,7 +22,7 @@ export default function BlogLayout({ children, meta }: any) {
           className="text-text cursor-pointer pt-4 pl-4"
           size={40}
           title="Go Back"
-          onClick={() => router.back()}
+          onClick={() => router.push("/blog")}
         />
         <article
           className="prose lg:prose-xl min-h-screen text-text px-8 m-auto py-4 sm:py-16"
