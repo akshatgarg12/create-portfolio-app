@@ -51,7 +51,7 @@ const Home = ({
         <title>{documentTitle}</title>
       </Head>
       <section className="py-20 bg-altBackground text-text text-center">
-        <div className="flex flex-col md:flex-row-reverse md:justify-evenly md:space-x-20 items-center max-w-[750px] m-auto">
+        <div className="flex flex-col md:flex-row-reverse md:justify-evenly items-center max-w-[800px] m-auto">
           <Image
             className="rounded-md"
             height={208}
@@ -59,7 +59,10 @@ const Home = ({
             src={myImage}
             alt={"Photo of yours truly"}
           />
-          <div className="flex flex-col items-center mt-10">
+          <div
+            className="flex flex-col items-center mt-10"
+            style={{ marginLeft: 0 }}
+          >
             <h3 className="text-2xl">
               {t("home.salutation") + " "}
               {name.split(" ").map((n, idx) => (
