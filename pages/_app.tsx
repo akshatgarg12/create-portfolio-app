@@ -13,6 +13,7 @@ import ThemeContext from "@/context/theme";
 
 function App({ Component, pageProps }: AppProps) {
   const pathname = usePathname();
+  // TODO: Move default theme to config
   const [theme, setTheme] = useState("dark");
 
   return (
