@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ThemeBar from "../ThemeBar";
 import { useTranslation } from "next-i18next";
+import SelectLocale from "../SelectLocale";
+import FooterConfig from "@/config/footer.json";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -17,6 +19,7 @@ const Footer = () => {
           @ToolCity
         </Link>
       </h4>
+      {FooterConfig.showSelectLocaleComponent && <SelectLocale />}
     </div>
   );
 };
