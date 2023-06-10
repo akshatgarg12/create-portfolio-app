@@ -6,10 +6,29 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../../next-i18next.config";
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 export default function Blog({ meta, content }: Blog) {
+  const seoConfig = {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      images: [
+        {
+          url: meta.img,
+          width: 800,
+          height: 600,
+          alt: meta.title,
+          type: "image/jpeg",
+        },
+      ],
+    },
+  };
   return (
     <>
+      <NextSeo {...seoConfig} />
       <Head>
         <title>{meta.title}</title>
       </Head>
