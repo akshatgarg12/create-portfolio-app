@@ -9,18 +9,17 @@ import { useState } from "react";
 import { DefaultSeo } from "next-seo";
 import defaultSeoConfig from "@/config/defaultSeo.config";
 import ThemeContext from "@/context/theme";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 function App({ Component, pageProps }: AppProps) {
-  const { asPath, pathname } = useRouter();
-  const origin =
+  const pathname = usePathname();
+  const URL =
     typeof window !== "undefined" && window.location.origin
       ? window.location.origin
       : "";
-  const URL = `${origin}${asPath}`;
   // TODO: Move default theme to config
   const [theme, setTheme] = useState("dark");
-
+  console.log(URL);
   return (
     <>
       <DefaultSeo {...defaultSeoConfig(URL)} />

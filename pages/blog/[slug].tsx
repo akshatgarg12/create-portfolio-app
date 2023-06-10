@@ -10,23 +10,22 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 
 export default function Blog({ meta, content }: Blog) {
-  const { asPath } = useRouter();
-  const origin =
+  const URL =
     typeof window !== "undefined" && window.location.origin
       ? window.location.origin
       : "";
-
-  const URL = `${origin}${asPath}`;
+  const { asPath } = useRouter();
   const seoConfig = {
     title: meta.title,
     description: meta.description,
     openGraph: {
+      url: URL + asPath,
       title: meta.title,
       description: meta.description,
       images: [
         {
           url: URL + meta.img,
-          width: 800,
+          width: 600,
           height: 600,
           alt: meta.title,
           type: "image/jpeg",
