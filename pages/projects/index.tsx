@@ -28,7 +28,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       else return repo;
     })
     .map((repo: any) => {
-      console.log(repo);
       const {
         id,
         name,
@@ -48,7 +47,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         html_url,
       };
     });
-
   return {
     props: {
       repos: reposData,
