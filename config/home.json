@@ -11,7 +11,7 @@
   },
   "myImage": "/me.png",
   "workedAt": ["/logos/ms.png", "/logos/builderio.png"],
-  "enableFeedbackSection": true,
+  "enableFeedbackSection": false,
   "feedbacks": [
     {
       "author": "Akshat garg",
