@@ -19,12 +19,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     (repo: any) => repo.status === "fulfilled"
   );
   const reposData = (
-    await Promise.allSettled(
-      filterResponse.map((repo: any) => repo.value.json())
-    )
+    await Promise.all(filterResponse.map((repo: any) => repo.value.json()))
   )
     .filter((repo: any) => {
-      if (repo.value.message) console.error(repo);
+      if (repo.message) console.error(repo);
       else return repo;
     })
     .map((repo: any) => {
