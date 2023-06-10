@@ -7,16 +7,24 @@ import { i18n } from "../../next-i18next.config";
 
 import Head from "next/head";
 import Subtext from "@/components/Subtext";
+import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const username = ProjectsData.github_username;
-  const repos = ProjectsData.projects.map((repo) => repo.toLowerCase());
-  const response = await fetch(
-    `https://api.github.com/users/${username}/repos?per_page=100`
+  const repos = await Promise.allSettled(
+    ProjectsData.projects.map((repo) =>
+      fetch(`https://api.github.com/repos/${repo.toLocaleLowerCase()}`)
+    )
   );
-  const data = await response.json();
-  const reposData = data
-    .filter((repo: any) => repos.includes(repo.name.toLowerCase()))
+  const filterResponse = repos.filter(
+    (repo: any) => repo.status === "fulfilled"
+  );
+  const reposData = (
+    await Promise.all(filterResponse.map((repo: any) => repo.value.json()))
+  )
+    .filter((repo: any) => {
+      if (repo.message) console.error(repo);
+      else return repo;
+    })
     .map((repo: any) => {
       const {
         id,
@@ -67,8 +75,17 @@ export default function ProjectsPage(props: ProjectsPageProps) {
       <Head>
         <title>{t("projects.title")}</title>
       </Head>
-      <div className="min-h-[90vh] bg-background py-10">
+      <div className="min-h-[90vh] bg-background py-10 text-text">
         <Subtext text={t("projects.subtext")} />
+        <h5 className="text-center">
+          <Link
+            className="text-link"
+            href={"https://github.com/" + ProjectsData.github_username}
+            target="blank"
+          >
+            GitHub Profile @ {ProjectsData.github_username}
+          </Link>
+        </h5>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
           {props.repos.map((repo) => (
             <ProjectCard

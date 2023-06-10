@@ -1,6 +1,4 @@
 {
-    "github_username" : "akshatgarg12",
-    "projects" : [
-        "The-Office", "CodeDraw", "Invester", "GetFit", "SSDiff", "Microsoft-engage-project"
-    ]
+  "github_username": "akshatgarg12",
+  "projects": ["ToolCity/FastReport", "ToolCity/create-portfolio-app"]
 }
