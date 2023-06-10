@@ -19,14 +19,22 @@ function App({ Component, pageProps }: AppProps) {
       : "";
   // TODO: Move default theme to config
   const [theme, setTheme] = useState("dark");
-  console.log(URL);
+  const seoConfig = defaultSeoConfig(URL);
   return (
     <>
-      <DefaultSeo {...defaultSeoConfig(URL)} />
+      <DefaultSeo {...seoConfig} />
       <Head>
         {/* TODO: replace this with a favicon */}
         <link rel="icon" href="/me.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoConfig.defaultTitle} />
+        <meta name="twitter:description" content={seoConfig.description} />
+        <meta
+          name="twitter:image"
+          content={seoConfig.openGraph.images[0].url ?? ""}
+        />
         <style>
           {`
             @layer base {
