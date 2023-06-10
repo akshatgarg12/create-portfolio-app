@@ -5,20 +5,25 @@ import "@/styles/tailwind.css";
 import Head from "next/head";
 import themes from "@/styles/themes.json";
 import type { AppProps } from "next/app";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { DefaultSeo } from "next-seo";
 import defaultSeoConfig from "@/config/defaultSeo.config";
 import ThemeContext from "@/context/theme";
+import { useRouter } from "next/router";
 
 function App({ Component, pageProps }: AppProps) {
-  const pathname = usePathname();
+  const { asPath, pathname } = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+  const URL = `${origin}${asPath}`;
   // TODO: Move default theme to config
   const [theme, setTheme] = useState("dark");
 
   return (
     <>
-      <DefaultSeo {...defaultSeoConfig} />
+      <DefaultSeo {...defaultSeoConfig(URL)} />
       <Head>
         {/* TODO: replace this with a favicon */}
         <link rel="icon" href="/me.png" />

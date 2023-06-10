@@ -7,8 +7,16 @@ import { i18n } from "../../next-i18next.config";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 export default function Blog({ meta, content }: Blog) {
+  const { asPath } = useRouter();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+
+  const URL = `${origin}${asPath}`;
   const seoConfig = {
     title: meta.title,
     description: meta.description,
@@ -17,7 +25,7 @@ export default function Blog({ meta, content }: Blog) {
       description: meta.description,
       images: [
         {
-          url: meta.img,
+          url: URL + meta.img,
           width: 800,
           height: 600,
           alt: meta.title,
@@ -42,7 +50,6 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     if (!params || !params.slug) return { notFound: true };
     const blog = getBlogBySlug(params.slug.toString());
     const content = await markdownToHtml(blog.content || "");
-
     return {
       props: {
         ...blog,
