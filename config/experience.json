@@ -31,6 +31,18 @@
         "Successfully delivered video conferencing app on time with ongoing support and enhancements."
       ],
       "companyLogo": "/logos/ms.png"
+    },
+    {
+      "companyName": "Crio.do Winter of Doing",
+      "jobTitle": "Internship",
+      "duration": "3 months",
+      "description": [
+        "Designed and developed an integrated accounting service web app with multiple data sources.",
+        "Scheduled cron jobs for automated data updates, ensuring data accuracy.",
+        "Delivered with features like graph analysis, pagination, and filtering for enhanced user experience.",
+        "Successfully delivered the web application, meeting all project requirements and timelines."
+      ],
+      "companyLogo": "/logos/crio.png"
     }
   ]
 }
