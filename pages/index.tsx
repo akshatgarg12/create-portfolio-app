@@ -8,6 +8,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../next-i18next.config";
 import FeedbackCard, { FeedbackCardProps } from "@/components/Cards/Feedback";
 import { Fragment } from "react";
+import ProjectCard from "@/components/Cards/Project";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -109,6 +110,38 @@ const Home = ({
             {t("home.about")}
           </h2>
           <p className="text-lg">{about}</p>
+        </div>
+      </section>
+      <section className="py-30 flex flex-col items-center bg-altBackground text-text">
+        <div className="w-9/12 m-auto">
+          <h2 className="mb-4 text-xl underline font-bold">
+            {t("home.projects")}
+          </h2>
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
+            {[
+              {
+                id: "1",
+                name: "Portfolio",
+                description: "My portfolio website",
+                language: "TypeScript",
+                stargazers_count: 0,
+                forks: 0,
+                html_url: "",
+              },
+            ].map((repo) => (
+              <ProjectCard
+                invert
+                key={repo.id}
+                id={repo.id}
+                name={repo.name}
+                description={repo.description}
+                language={repo.language}
+                stargazers_count={repo.stargazers_count}
+                forks={repo.forks}
+                html_url={repo.html_url}
+              />
+            ))}
+          </div>
         </div>
       </section>
       {enableFeedbackSection && (
