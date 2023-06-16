@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Contact from "@/components/Contact";
 import HomeData from "@/config/home.json";
 import { GetStaticProps } from "next";
@@ -8,14 +9,22 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "../next-i18next.config";
 import FeedbackCard, { FeedbackCardProps } from "@/components/Cards/Feedback";
 import { Fragment } from "react";
-
+import ProjectCard from "@/components/Cards/Project";
+import { fetchProjectsFromGithub } from "@/lib/github";
+import ProjectsData from "@/config/projects.json";
+import type { Project } from "./projects";
+import { AiOutlineArrowRight } from "react-icons/ai";
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const reposData = HomeData.enableProjectsSection
+    ? await fetchProjectsFromGithub(ProjectsData.projects.slice(0, 3))
+    : [];
   return {
     props: {
       ...HomeData,
       ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
         "common",
       ])),
+      repos: reposData,
     },
   };
 };
@@ -34,8 +43,10 @@ export interface HomePropsType {
   contact: ContactType;
   myImage: string;
   workedAt: string[];
+  enableProjectsSection: boolean;
   enableFeedbackSection: boolean;
   feedbacks: FeedbackCardProps[];
+  repos: Project[];
 }
 
 const Home = ({
@@ -45,8 +56,10 @@ const Home = ({
   contact,
   myImage,
   workedAt,
+  enableProjectsSection,
   enableFeedbackSection,
   feedbacks,
+  repos,
 }: HomePropsType) => {
   const { t } = useTranslation("common");
   const documentTitle = `${t("home.title")} | ${name}`;
@@ -111,6 +124,35 @@ const Home = ({
           <p className="text-lg">{about}</p>
         </div>
       </section>
+      {enableProjectsSection && (
+        <section className="py-30 flex flex-col items-center bg-altBackground text-text">
+          <div className="w-9/12 m-auto">
+            <h2 className="mb-4 text-xl underline font-bold">
+              {t("home.projects")}
+            </h2>
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
+              {repos.length &&
+                repos.map((repo) => (
+                  <ProjectCard
+                    invert
+                    key={repo.id}
+                    id={repo.id}
+                    name={repo.name}
+                    description={repo.description}
+                    language={repo.language}
+                    stargazers_count={repo.stargazers_count}
+                    forks={repo.forks}
+                    html_url={repo.html_url}
+                  />
+                ))}
+            </div>
+            <Link href={"/projects"} className="text-link flex justify-center">
+              Checkout more projects here{" "}
+              <AiOutlineArrowRight className="m-auto mx-1" />
+            </Link>
+          </div>
+        </section>
+      )}
       {enableFeedbackSection && (
         <section className="py-30 flex flex-col items-center bg-background text-text">
           <div className="w-full m-auto">

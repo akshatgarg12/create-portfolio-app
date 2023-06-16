@@ -8,43 +8,10 @@ import { i18n } from "../../next-i18next.config";
 import Head from "next/head";
 import Subtext from "@/components/Subtext";
 import Link from "next/link";
+import { fetchProjectsFromGithub } from "@/lib/github";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const repos = await Promise.allSettled(
-    ProjectsData.projects.map((repo) =>
-      fetch(`https://api.github.com/repos/${repo.toLocaleLowerCase()}`)
-    )
-  );
-  const filterResponse = repos.filter(
-    (repo: any) => repo.status === "fulfilled"
-  );
-  const reposData = (
-    await Promise.all(filterResponse.map((repo: any) => repo.value.json()))
-  )
-    .filter((repo: any) => {
-      if (repo.message) console.error(repo);
-      else return repo;
-    })
-    .map((repo: any) => {
-      const {
-        id,
-        name,
-        description,
-        language,
-        stargazers_count,
-        forks,
-        html_url,
-      } = repo;
-      return {
-        id,
-        name,
-        description,
-        language,
-        stargazers_count,
-        forks,
-        html_url,
-      };
-    });
+  const reposData = await fetchProjectsFromGithub(ProjectsData.projects);
   return {
     props: {
       repos: reposData,
