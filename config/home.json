@@ -11,6 +11,7 @@
   },
   "myImage": "/me.png",
   "workedAt": ["/logos/ms.png", "/logos/builderio.png"],
+  "enableProjectsSection": true,
   "enableFeedbackSection": true,
   "feedbacks": [
     {
