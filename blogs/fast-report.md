@@ -26,14 +26,22 @@ FastReport allows you to define baseline configurations for your pages, enabling
 
 Additionally, FastReport offers the capability to send alerts through email and Slack channels, giving you the flexibility to schedule performance reports according to your needs. By leveraging FastReport, you can proactively monitor your website's performance, identify performance regressions, and ensure that your application maintains excellent performance standards.
 
+## Plugin Friendly
+
+FastReport uses a message-queue system to pass data across the system, each queue is responsible for a specific task. A simple plugin can be created which can cater to your specific business needs for eg. a queue which curates the scope of improvement for all the pages and uses AI to summarize it.
+
+This is a simple architecture diagram of how the tool works.
+
+<p align="center">
+  <img src="/blogs/fast-report/architecture.png" height="400" />
+</p>
+
 ## Integration guide
 
-The simplest way currently to use FastReport is to directly use the [source code](https://github.com/ToolCity/FastReport) and host in on your servers, we are constantly looking for better ways to distribute this software like a [docker](https://www.docker.com/) container or a cloud version for users who dont wan't to go through hassle of setting up things.
+The simplest way currently to use FastReport is to directly clone the [source code](https://github.com/ToolCity/FastReport) and set the configuration files and enviornment variables and create an docker image out of it. Deploy a container using that image to a hosting service of your choice!
 
-Currently the best way is follow the [docs on github](https://github.com/ToolCity/FastReport/blob/main/readme.md) for setting up and using the tool.
+Get to know more about how to setup and use the tool : [docs on github](https://github.com/ToolCity/FastReport/blob/main/readme.md)
 
 ## Be a part of the community
 
 [ToolCity](https://github.com/ToolCity) is a organisation dedicated to developing tools that simplify web development. If you'd like to participate and contribute to our community, we encourage you to visit our organization's GitHub page and share your ideas by creating an issue.
-
-We're also in the process of establishing a community channel on Discord, where you can join and engage with fellow developers. Stay tuned for updates on that front!
