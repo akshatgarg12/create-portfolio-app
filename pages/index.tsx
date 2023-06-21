@@ -130,7 +130,7 @@ const Home = ({
             <h2 className="mb-4 text-xl underline font-bold">
               {t("home.projects")}
             </h2>
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 max-w-5xl m-auto">
+            <div className="sm:w-9/12 m-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
               {repos.length &&
                 repos.map((repo) => (
                   <ProjectCard
