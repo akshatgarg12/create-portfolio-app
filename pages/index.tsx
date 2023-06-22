@@ -130,7 +130,13 @@ const Home = ({
             <h2 className="mb-4 text-xl underline font-bold">
               {t("home.projects")}
             </h2>
-            <div className="sm:w-9/12 m-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+            <div
+              className={`sm:w-9/12 m-auto grid grid-cols-1 lg:${
+                repos.length > 1
+                  ? "grid-cols-2"
+                  : "grid-cols-1 place-items-center"
+              } gap-4 mb-4 `}
+            >
               {repos.length &&
                 repos.map((repo) => (
                   <ProjectCard
@@ -161,7 +167,11 @@ const Home = ({
                 {t("home.feedback")}
               </h2>
             </div>
-            <div className="w-11/12 sm:w-9/12 m-auto grid grid-cols-1 lg:grid-cols-2">
+            <div
+              className={`w-11/12 sm:w-9/12 m-auto grid grid-cols-1 lg:${
+                feedbacks.length > 1 ? "grid-cols-2" : "grid-cols-1"
+              }`}
+            >
               {feedbacks.map((feedback, idx) => (
                 <FeedbackCard key={idx} {...feedback} />
               ))}
