@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import "@/styles/tailwind.css";
 import Head from "next/head";
+import HomeData from "@/config/home.json";
 import themes from "@/styles/themes.json";
 import type { AppProps } from "next/app";
 import { useState } from "react";
@@ -25,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
       <DefaultSeo {...seoConfig} />
       <Head>
         {/* TODO: replace this with a favicon */}
-        <link rel="icon" href="/me.png" />
+        <link rel="icon" href={HomeData.myImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta name="twitter:card" content="summary_large_image" />
