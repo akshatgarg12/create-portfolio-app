@@ -10,9 +10,14 @@ img: "/blogs/fast-report/hero.png"
 
 ## Introduction
 
-Imagine a tool that lets you set baseline scores for different categories in Lighthouse scores. When your website's score falls below these baselines, it sends alerts to your email and Slack channels. It's easy to picture, right? While many performance monitoring tools already exist, they can be difficult to use or have complicated ways to set baseline configurations for all your pages.
+FastReport is an open source solution to monitor lighthouse scores across all pages of your application and get curated reports in channels like email and slack. It allows you to trigger lighthouse score reports for all pages of your web app by a single API call, once the report is generated results are sent to your channels in form of table and html.
 
-Introducing FastReport: a simple, open-source, Lighthouse-based performance monitoring tool that is user-friendly and can be customized to fit your needs. The tool is completely open source, so you can host it yourself for your business. It's designed to make it easy to develop and add plugins that change how it reports, giving you control over the reporting process.
+Features of the tool :
+
+- Define a config, with the urls which you want to test, baseline scores against which report should be generated.
+- Call the `/trigger` endpoint from your workflows, such as from a github action , cron job or even a manual trigger using the API client. This will trigger the lighthouse test for all your urls. You can even specify the categories and devices you want to test.
+- Get reports in your channels.
+- Send these reports to other channels by creating your own plugins!
 
 > Open source is not just about free software. It's about the freedom to learn, create, and contribute to something bigger than oneself." - Richard Stallman
 
