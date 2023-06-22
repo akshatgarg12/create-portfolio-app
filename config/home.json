@@ -12,24 +12,13 @@
   "myImage": "/avatar.png",
   "workedAt": ["/logos/ms.png", "/logos/builderio.png"],
   "enableProjectsSection": true,
-  "enableFeedbackSection": false,
+  "enableFeedbackSection": true,
   "feedbacks": [
     {
-      "author": "Akshat garg",
-      "position": "Software Engineer | Builder.io",
-      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!",
-      "linkedin_url": "https://www.linkedin.com/in/akshat-garg-1a1b3b1a3/"
-    },
-    {
-      "author": "Akshat garg",
-      "position": "Software Engineer | Builder.io",
-      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!"
-    },
-    {
-      "author": "Akshat garg",
-      "position": "Software Engineer | Builder.io",
-      "author_img": "/me.png",
-      "feedback": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat expedita ducimus, mollitia voluptatibus animi repudiandae amet placeatsint quaerat laboriosam veniam tempora, eos reprehenderit dicta velit! Consequatur vitae sunt qui!"
+      "author": "Shyam Seshadari",
+      "position": "Head of Product Development | Builder.io",
+      "feedback": "At Builder.io, we decided to hire an intern, and with our posting, we had a few thousand applicants. We shortlisted, and interviewed only Akshat in the first lot, and as soon as we interviewed him, we stopped. He was that good. As an intern, Akshat showed the kind of independence you would expect from a seasoned software engineer, from picking up new technologies, making large scale changes, debugging difficult issues, and creating reproductions. In addition, he was always up for a challenge, creating tools to automate screenshot diffing, and load testing of some of our APIs. I really wish Akshat the best, and I would hope to be able to work with him again!",
+      "linkedin_url": "https://www.linkedin.com/in/shyamseshadri"
     }
   ]
 }
