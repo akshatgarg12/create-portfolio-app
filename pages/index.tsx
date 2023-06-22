@@ -124,33 +124,32 @@ const Home = ({
           <p className="text-lg">{about}</p>
         </div>
       </section>
-      {enableProjectsSection && (
+      {enableProjectsSection && repos.length ? (
         <section className="py-30 flex flex-col items-center bg-altBackground text-text">
           <div className="w-9/12 m-auto">
             <h2 className="mb-4 text-xl underline font-bold">
               {t("home.projects")}
             </h2>
             <div
-              className={`sm:w-9/12 m-auto grid grid-cols-1 lg:${
+              className={`sm:w-9/12 m-auto grid grid-cols-1 ${
                 repos.length > 1
-                  ? "grid-cols-2"
-                  : "grid-cols-1 place-items-center"
+                  ? "lg:grid-cols-2"
+                  : "lg:grid-cols-1 place-items-center"
               } gap-4 mb-4 `}
             >
-              {repos.length &&
-                repos.map((repo) => (
-                  <ProjectCard
-                    invert
-                    key={repo.id}
-                    id={repo.id}
-                    name={repo.name}
-                    description={repo.description}
-                    language={repo.language}
-                    stargazers_count={repo.stargazers_count}
-                    forks={repo.forks}
-                    html_url={repo.html_url}
-                  />
-                ))}
+              {repos.map((repo) => (
+                <ProjectCard
+                  invert
+                  key={repo.id}
+                  id={repo.id}
+                  name={repo.name}
+                  description={repo.description}
+                  language={repo.language}
+                  stargazers_count={repo.stargazers_count}
+                  forks={repo.forks}
+                  html_url={repo.html_url}
+                />
+              ))}
             </div>
             <Link href={"/projects"} className="text-link flex justify-center">
               Checkout more projects here{" "}
@@ -158,8 +157,8 @@ const Home = ({
             </Link>
           </div>
         </section>
-      )}
-      {enableFeedbackSection && (
+      ) : null}
+      {enableFeedbackSection && feedbacks.length ? (
         <section className="py-30 flex flex-col items-center bg-background text-text">
           <div className="w-full m-auto">
             <div className="w-9/12 m-auto">
@@ -168,8 +167,10 @@ const Home = ({
               </h2>
             </div>
             <div
-              className={`w-11/12 sm:w-9/12 m-auto grid grid-cols-1 lg:${
-                feedbacks.length > 1 ? "grid-cols-2" : "grid-cols-1"
+              className={`w-11/12 sm:w-9/12 m-auto grid grid-cols-1 ${
+                feedbacks.length > 1
+                  ? "lg:grid-cols-2"
+                  : "lg:grid-cols-1 place-items-center"
               }`}
             >
               {feedbacks.map((feedback, idx) => (
@@ -178,7 +179,7 @@ const Home = ({
             </div>
           </div>
         </section>
-      )}
+      ) : null}
       <section className="py-30 flex flex-col items-center bg-altBackground text-text">
         <div className="w-9/12 m-auto">
           <h2 className="mb-4 text-xl underline font-bold">
